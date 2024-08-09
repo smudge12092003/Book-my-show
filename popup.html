@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookMyShow - Showtimes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+  font-family: sans-serif;
+}
+
+.showtimes-container {
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 400px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.movie-list {
+  list-style: none;
+  padding: 0;
+}
+
+.movie-list li {
+  margin-bottom: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    </header>
+
+  <main>
+    <section class="showtimes-container">
+      <h2>Now Showing</h2>
+      <button id="show-movies">Show Upcoming Movies</button>
+    </section>
+  </main>
+
+  <div id="movie-popup" class="modal"> <div class="modal-content">
+      <span class="close" onclick="closeMoviePopup()">&times;</span>
+      <h2>Upcoming Movies</h2>
+      <ul class="movie-list">
+        <li>Manjummel Boys - 1:00 PM</li>
+        <li>Fast X - 4:30 PM</li>
+        <li>John Wick: Chapter 4 - 7:15 PM</li>
+        <li>The Batman 2 - 9:45 PM</li>
+        <li>Pushpa 2: The Rise - 11:00 PM</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    </footer>
+  <script>
+    const showMoviesButton = document.getElementById('show-movies');
+const moviePopup = document.getElementById('movie-popup');
+
+showMoviesButton.addEventListener('click', () => {
+  moviePopup.classList.add('visible');
+});
+
+function closeMoviePopup() {
+  moviePopup.classList.remove('visible');
+}
+
+  </script>
+</body>
+</html>
